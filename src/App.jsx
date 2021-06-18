@@ -1,17 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ParentComponent from './ParentComponent';
 
 export const AppTheme = React.createContext();
 
 function App() {
-  //  Creating context
+  const [light, setLight] = useState(true);
+
+  const handleToggle = () => {
+    setLight(!light);
+  };
 
   return (
     <>
       <div className='container p-5'>
         <h3>Learning Context API</h3>
         <hr />
-        <AppTheme.Provider value='light'>
+        <div className='form-check form-switch'>
+          <input
+            className='form-check-input'
+            type='checkbox'
+            onChange={handleToggle}
+            value={light}
+          />
+          <label className='form-check-label'>{light ? 'Light' : 'Dark'}</label>
+        </div>
+        <AppTheme.Provider value={light}>
           <ParentComponent />
         </AppTheme.Provider>
       </div>

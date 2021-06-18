@@ -7,10 +7,9 @@ class ChildComponent extends Component {
       <>
         <AppTheme.Consumer>
           {(theme) => {
-            console.log(theme);
             return (
               <>
-                {theme === 'light' ? (
+                {theme ? (
                   <div className='alert alert-light'>
                     This is child component in light theme
                   </div>
