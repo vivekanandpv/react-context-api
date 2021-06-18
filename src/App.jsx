@@ -1,11 +1,10 @@
 import React from 'react';
 import ParentComponent from './ParentComponent';
 
+//  Creating context
 export const AppTheme = React.createContext();
 
 function App() {
-  //  Creating context
-
   return (
     <>
       <div className='container p-5'>
