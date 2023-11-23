@@ -20,11 +20,11 @@ function App() {
             className='form-check-input'
             type='checkbox'
             onChange={handleToggle}
-            value={light}
+            checked={light}
           />
           <label className='form-check-label'>{light ? 'Light' : 'Dark'}</label>
         </div>
-        <AppTheme.Provider value={light}>
+        <AppTheme.Provider value={{light, setLight}}>
           <ParentComponent />
         </AppTheme.Provider>
       </div>
